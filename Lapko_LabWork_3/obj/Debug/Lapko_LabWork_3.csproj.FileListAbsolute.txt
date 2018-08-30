@@ -1,0 +1,7 @@
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\bin\Debug\Lapko_LabWork_3.exe.config
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\bin\Debug\Lapko_LabWork_3.exe
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\bin\Debug\Lapko_LabWork_3.pdb
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\obj\Debug\Lapko_LabWork_3.csprojAssemblyReference.cache
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\obj\Debug\Lapko_LabWork_3.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\obj\Debug\Lapko_LabWork_3.exe
+C:\Users\Андрей\Documents\Visual Studio 2017\Project\Lapko_LabWork_3\Lapko_LabWork_3\obj\Debug\Lapko_LabWork_3.pdb
