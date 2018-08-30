@@ -446,11 +446,11 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             Console.WriteLine("Factorial");
             Console.ForegroundColor = ConsoleColor.White;
 
-            int number;
+            ulong number;
 
             // Implement input of the number
             Console.Write("Enter the number: ");
-            if (!int.TryParse(Console.ReadLine(), out number))
+            if (!ulong.TryParse(Console.ReadLine(), out number))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Number must be int!");
@@ -459,8 +459,8 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             }
 
             // Implement input the for circle to calculate factorial of the number
-            int result = 1;
-            for (int i = number; i > 0; i--)
+            ulong result = 1;
+            for (ulong i = number; i > 0; i--)
             {
                 result *= i;
             }
