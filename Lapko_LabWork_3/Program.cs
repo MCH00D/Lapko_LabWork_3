@@ -83,9 +83,8 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
                 }
 
                 userOption[i] = option;
-
-                if (userOption.ToString() != "3817283".Substring(0, i + 1)
-                    || userOption.ToString() != "3827183".Substring(0, i + 1))
+                if (string.Concat(userOption).Substring(0, i + 1) != "3817283".Substring(0, i + 1)
+                    && string.Concat(userOption).Substring(0, i + 1) != "3827183".Substring(0, i + 1))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Oops. You lose :(");
