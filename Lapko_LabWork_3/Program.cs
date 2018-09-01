@@ -21,7 +21,7 @@ namespace Lapko_LabWork_3
             switch (a)
             {
                 case 1:
-                    Farmer_puzzle();
+                    FarmePuzzle();
                     Console.WriteLine("");
                     break;
                 case 2:
@@ -29,7 +29,7 @@ namespace Lapko_LabWork_3
                     Console.WriteLine("");
                     break;
                 case 3:
-                    Factorial_calculation();
+                    FactorialCalculation();
                     Console.WriteLine("");
                     break;
                 default:
@@ -41,7 +41,7 @@ namespace Lapko_LabWork_3
         }
 
         #region Farmer
-        static void Farmer_puzzle()
+        static void FarmePuzzle()
         {
             //Key sequence: 3817283 or 3827183
             // Declare 7 int variables for the input numbers and other variables
@@ -65,185 +65,46 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
 
             Console.ForegroundColor = ConsoleColor.White;
 
-            int step1;
-            int step2;
-            int step3;
-            int step4;
-            int step5;
-            int step6;
-            int step7;
+            int[] userOption = new int[7];
 
-            Console.Write("Step 1: ");
-
-            if (!int.TryParse(Console.ReadLine(), out step1) && step1 > 0 && step1 <= 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The entered value must be a number from 1 to 8!");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step1 != 3)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Oops. You lose :(");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-
-            Console.Write("Step 2: ");
-
-            if (!int.TryParse(Console.ReadLine(), out step2) && step2 > 0 && step2 <= 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The entered value must be a number from 1 to 8!");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step2 != 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Oops. You lose :(");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-
-            Console.Write("Step 3: ");
-
-            if (!int.TryParse(Console.ReadLine(), out step3) && step3 > 0 && step3 <= 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The entered value must be a number from 1 to 8!");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step3 != 1 && step3 != 2)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Oops. You lose :(");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step3 == 1)
+            for (int i = 0; i < 7; i++)
             {
 
-                Console.Write("Step 4: ");
+                Console.Write("Step {0}: ", i + 1);
 
-                if (!int.TryParse(Console.ReadLine(), out step4) && step4 > 0 && step4 <= 8)
+                int option;
+                if (!int.TryParse(Console.ReadLine(), out option) && option > 0 && option <= 8)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("The entered value must be a number from 1 to 8!");
                     Console.ForegroundColor = ConsoleColor.White;
+
                     return;
                 }
-                else if (step4 != 7)
+
+                userOption[i] = option;
+
+                if (userOption.ToString() != "3817283".Substring(0, i + 1)
+                    || userOption.ToString() != "3827183".Substring(0, i + 1))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Oops. You lose :(");
+                    Console.Beep(150, 200);
                     Console.ForegroundColor = ConsoleColor.White;
                     return;
                 }
 
-                Console.Write("Step 5: ");
-
-                if (!int.TryParse(Console.ReadLine(), out step5) && step5 > 0 && step5 <= 8)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("The entered value must be a number from 1 to 8!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-                else if (step5 != 2)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Oops. You lose :(");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-            }
-            else if (step3 == 2)
-            {
-                Console.Write("Step 4: ");
-
-                if (!int.TryParse(Console.ReadLine(), out step4) && step4 > 0 && step4 <= 8)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("The entered value must be a number from 1 to 8!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-                else if (step4 != 7)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Oops. You lose :(");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-
-                Console.Write("Step 5: ");
-
-                if (!int.TryParse(Console.ReadLine(), out step5) && step5 > 0 && step5 <= 8)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("The entered value must be a number from 1 to 8!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-                else if (step5 != 1)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Oops. You lose :(");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    return;
-                }
-
-            }
-
-            Console.Write("Step 6: ");
-
-            if (!int.TryParse(Console.ReadLine(), out step6) && step6 > 0 && step6 <= 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The entered value must be a number from 1 to 8!");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step6 != 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Oops. You lose :(");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-
-            Console.Write("Step 7: ");
-
-            if (!int.TryParse(Console.ReadLine(), out step7) && step7 > 0 && step7 <= 8)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The entered value must be a number from 1 to 8!");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
-            }
-            else if (step7 != 3)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Oops. You lose :(");
-                Console.ForegroundColor = ConsoleColor.White;
-                return;
             }
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Congratulations, you win! :)");
             Console.ForegroundColor = ConsoleColor.White;
-
         }
         #endregion
 
         #region Calculator
-        static void Calculator()
+        public static void Calculator()
         {
-
-            // Set Console.ForegroundColor  value
             Console.Clear();
             Console.WriteLine(@"Select the arithmetic operation:
 1. Multiplication 
@@ -280,31 +141,42 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             }
         }
 
-        static void Multiplication()
+        public static double? GetDoubleValueFromConsole()
+        {
+            double number;
+
+            if (!double.TryParse(Console.ReadLine(), out number))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Number must be double!");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                return null;
+            }
+
+            return number;
+        }
+
+        public static void Multiplication()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Multiplication");
             Console.ForegroundColor = ConsoleColor.White;
 
-            double number1;
-            double number2;
-
             Console.Write("Enter the number 1: ");
-            if (!double.TryParse(Console.ReadLine(), out number1))
+            var number1 = GetDoubleValueFromConsole();
+
+            if (number1 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.Write("Enter the number 2: ");
-            if (!double.TryParse(Console.ReadLine(), out number2))
+            var number2 = GetDoubleValueFromConsole();
+
+            if (number2 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
@@ -312,134 +184,114 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
 
         }
 
-        static void Divide()
+        public static void Divide()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Divide");
             Console.ForegroundColor = ConsoleColor.White;
 
-            double number1;
-            double number2;
-
             Console.Write("Enter the number 1: ");
-            if (!double.TryParse(Console.ReadLine(), out number1))
+            var number1 = GetDoubleValueFromConsole();
+
+            if (number1 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.Write("Enter the number 2: ");
-            if (!double.TryParse(Console.ReadLine(), out number2))
+            var number2 = GetDoubleValueFromConsole();
+
+            if (number2 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.WriteLine("Result: {0}", number1 / number2);
         }
 
-        static void Addition()
+        public static void Addition()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Addition");
             Console.ForegroundColor = ConsoleColor.White;
 
-            double number1;
-            double number2;
-
             Console.Write("Enter the number 1: ");
-            if (!double.TryParse(Console.ReadLine(), out number1))
+            var number1 = GetDoubleValueFromConsole();
+
+            if (number1 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.Write("Enter the number 2: ");
-            if (!double.TryParse(Console.ReadLine(), out number2))
+            var number2 = GetDoubleValueFromConsole();
+
+            if (number2 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.WriteLine("Result: {0}", number1 + number2);
         }
 
-        static void Subtraction()
+        public static void Subtraction()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Subtraction");
             Console.ForegroundColor = ConsoleColor.White;
 
-            double number1;
-            double number2;
-
             Console.Write("Enter the number 1: ");
-            if (!double.TryParse(Console.ReadLine(), out number1))
+            var number1 = GetDoubleValueFromConsole();
+
+            if (number1 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.Write("Enter the number 2: ");
-            if (!double.TryParse(Console.ReadLine(), out number2))
+            var number2 = GetDoubleValueFromConsole();
+
+            if (number2 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.WriteLine("Result: {0}", number1 - number2);
         }
 
-        static void Exponentiation()
+        public static void Exponentiation()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Exponentiation");
             Console.ForegroundColor = ConsoleColor.White;
 
-            double number1;
-            double number2;
-
             Console.Write("Enter the number 1: ");
-            if (!double.TryParse(Console.ReadLine(), out number1))
+            var number1 = GetDoubleValueFromConsole();
+
+            if (number1 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
             Console.Write("Enter the number 2: ");
-            if (!double.TryParse(Console.ReadLine(), out number2))
+            var number2 = GetDoubleValueFromConsole();
+
+            if (number2 == null)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be double!");
-                Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
 
-            Console.WriteLine("Result: {0}", Math.Pow(number1, number2));
+            Console.WriteLine("Result: {0}", Math.Pow((double)number1, (double)number2));
         }
 
         #endregion
 
         #region Factorial
-        static void Factorial_calculation()
+        public static void FactorialCalculation()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -453,7 +305,7 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
             if (!ulong.TryParse(Console.ReadLine(), out number))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Number must be int!");
+                Console.WriteLine("Number must be ulong!");
                 Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
