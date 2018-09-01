@@ -65,7 +65,7 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
 
             Console.ForegroundColor = ConsoleColor.White;
 
-            int[] userOption = new int[7];
+            var userOption = new List<int> { };
 
             for (int i = 0; i < 7; i++)
             {
@@ -82,9 +82,10 @@ You can do whatever how many flights. How to transport the wolf, goat and cabbag
                     return;
                 }
 
-                userOption[i] = option;
-                if (string.Concat(userOption).Substring(0, i + 1) != "3817283".Substring(0, i + 1)
-                    && string.Concat(userOption).Substring(0, i + 1) != "3827183".Substring(0, i + 1))
+                userOption.Add(option);
+
+                if (string.Join("", userOption) != "3817283".Substring(0, i + 1)
+                    && string.Join("", userOption) != "3827183".Substring(0, i + 1))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Oops. You lose :(");
